@@ -20,10 +20,10 @@
           <li><a [routerLink]="['/proizvodi',5]">Akumulatori</a></li>
         </ul>
       </li>
-      <li><a [routerLink]="['/proizvodi',0]" style="font-weight: bold; color: #e00000">AKCIJA</a></li>
-      <li><a [routerLink]="['/prodavnice',1]">Prodavnice</a></li>
-      <li><a [routerLink]="['/prodavnice',2]">Fitnes centri</a></li>
-      <li><a [routerLink]="['/recepti']">Recepti</a></li>
+      <li><a [routerLink]="['/proizvodi',0]" style="font-weight: bold; color: #e00000">Akcija</a></li>
+      <li><a [routerLink]="['/prodavnice',1]">Ovalsceni dileri</a></li>
+      <li><a [routerLink]="['/prodavnice',2]">Ovlasceni servisi</a></li>
+      <li><a [routerLink]="['/recepti']">Modeli</a></li>
       <li><a [routerLink]="['/onama']">O nama</a></li>
       <li><a [routerLink]="['/kontakt']">Kontakt</a></li>
       <li  *ngIf="!isAuth" routerLink="/login" [routerLinkActiveOptions]="{ exact: true }"
@@ -35,7 +35,7 @@
         <ng-container *ngIf="isAuth">
           <ng-container *ngIf="korisnik">
       <li  *ngIf=" korisnik.role_id == 1" routerLink="/admin" [routerLinkActiveOptions]="{ exact: true }"
-           routerLinkActive="active"><a [routerLink]="['/admin']" >Admin</a></li>
+           routerLinkActive="active"><a [routerLink]="['/admin']" >Dodaj proizvod</a></li>
         </ng-container>
         </ng-container>
       <li  *ngIf="isAuth" routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
