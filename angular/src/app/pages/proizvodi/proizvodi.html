@@ -5,7 +5,7 @@
         <!--prikazuje samo ako id odgovara id-u kategorije iz rutera-->
         <div class="col-md-7"  >
             <a href="#">
-                <img class="img-responsive" style="padding-left: 50px; max-height: 150px; padding-top: 50px;" src="{{proizvod.url}}" alt="">
+                <img class="img-responsive" style="padding-left: 50px; max-height: 150px; margin-top: 75px" src="{{proizvod.url}}" alt="">
             </a>
             <br/>
         </div>
@@ -31,14 +31,12 @@
         </ng-container>
 
         <ng-container *ngIf="proizvod.akcija == id">
-            <div class="col-md-7" >
+            <div class="col-md-7" style="margin-top: 75px">
                 <a href="#">
-                    <img class="img-responsive" style="padding-left: 50px" src="{{proizvod.url}}" alt="">
+                    <img class="img-responsive" style="padding-left: 50px; max-height: 150px" src="{{proizvod.url}}" alt="">
                 </a>
                 <br/>
             </div>
-            <br/>
-            <br/>
             <hr>
             <div class="col-md-5"  >
                 <h3>!!! AKCIJA!!!</h3>
