@@ -149,7 +149,6 @@ Upgraders: for a fresh start, consider running these commands
   * typings 0.8.1
   * zone.js 0.6.12
 
- * added favicon.ico
 
  * testing
    - updated wallaby.js and karma.conf.js
