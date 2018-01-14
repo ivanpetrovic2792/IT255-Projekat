@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "it255milanci";
+$db = "it255projekat";
 // Kreiraj konekciju
 $conn = new mysqli($servername, $username, $password, $db);
 if (!$conn->set_charset("utf8")) {
