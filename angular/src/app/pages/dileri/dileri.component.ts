@@ -1,21 +1,21 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import 'rxjs/Rx';
-import Prodavnica from "../../model/prodavnica";
-import ProdavniceService from "../../services/prodavnice.service";
+import Dileri from "../../model/dileri";
+import ProdavniceService from "../../services/dileri.service";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'prodavnice',
-    templateUrl: './prodavnice.html',
-    styleUrls : ['./prodavnice.css'],
+    selector: 'dileri',
+    templateUrl: './dileri.html',
+    styleUrls : ['./dileri.css'],
 })
-export default class ProdavniceComponent implements OnInit, OnDestroy  {
+export default class DileriComponent implements OnInit, OnDestroy  {
 
     id: number;
-    prodavnice: Prodavnica[];
+    dileri: Dileri[];
     private sub: any;
 
-    constructor(private prodavniceService: ProdavniceService,private route: ActivatedRoute) {
+    constructor(private dileriService: ProdavniceService,private route: ActivatedRoute) {
         var $:any;
         this.sub = this.route.params.subscribe(params => {
             this.id = +params['id'];
@@ -29,8 +29,8 @@ export default class ProdavniceComponent implements OnInit, OnDestroy  {
 
     loadProdavnice() {
         var $:any;
-        this.prodavniceService.getProdavnice().subscribe(data => {
-            this.prodavnice = data;
+        this.dileriService.getProdavnice().subscribe(data => {
+            this.dileri = data;
             setInterval(function(){
                 $ = window['jQuery'];
                 $('table').DataTable();

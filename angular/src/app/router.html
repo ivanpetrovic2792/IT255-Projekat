@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top marginBottom-0" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top marginBottom-0" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['']">The SUPPLEMENT store</a>
+      <a class="navbar-brand" [routerLink]="['']">M Sport Shop</a>
     </div>
 
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -21,9 +21,9 @@
         </ul>
       </li>
       <li><a [routerLink]="['/proizvodi',0]" style="font-weight: bold; color: #e00000">Akcija</a></li>
-      <li><a [routerLink]="['/prodavnice',1]">Ovlasceni dileri</a></li>
-      <li><a [routerLink]="['/prodavnice',2]">Ovlasceni servisi</a></li>
-      <li><a [routerLink]="['/recepti']">Modeli</a></li>
+      <li><a [routerLink]="['/dileri',1]">Ovlasceni dileri</a></li>
+      <li><a [routerLink]="['/dileri',2]">Ovlasceni servisi</a></li>
+      <li><a [routerLink]="['/modeli']">Modeli</a></li>
       <li><a [routerLink]="['/onama']">O nama</a></li>
       <li><a [routerLink]="['/kontakt']">Kontakt</a></li>
       <li  *ngIf="!isAuth" routerLink="/login" [routerLinkActiveOptions]="{ exact: true }"

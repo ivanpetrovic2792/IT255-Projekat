@@ -23,11 +23,11 @@ var korpa_component_1 = require("./pages/korpa/korpa.component");
 var adminpanel_component_1 = require("./pages/adminPanel/adminpanel.component");
 var onama_component_1 = require("./pages/onama/onama.component");
 var proizvodi_component_1 = require("./pages/proizvodi/proizvodi.component");
-var recepti_component_1 = require("./pages/recepti/recepti.component");
+var modeli_component_1 = require("./pages/modeli/modeli.component");
 var kontakt_component_1 = require("./pages/kontakt/kontakt.component");
-var prodavnice_component_1 = require("./pages/prodavnice/prodavnice.component");
+var dileri_component_1 = require("./pages/dileri/dileri.component");
 var proizvodi_service_1 = require("./services/proizvodi.service");
-var prodavnice_service_1 = require("./services/prodavnice.service");
+var dileri_service_1 = require("./services/dileri.service");
 var korpa_service_1 = require("./services/korpa.service");
 var shared_service_1 = require("./services/shared.service");
 var user_service_1 = require("./services/user.service");
@@ -56,15 +56,15 @@ AppModule = __decorate([
             adminpanel_component_1.default,
             onama_component_1.default,
             proizvodi_component_1.default,
-            recepti_component_1.default,
+            modeli_component_1.default,
             kontakt_component_1.default,
-            prodavnice_component_1.default
+            dileri_component_1.default
         ],
         providers: [
             register_service_1.RegisterService,
             login_service_1.LoginService,
             proizvodi_service_1.default,
-            prodavnice_service_1.default,
+            dileri_service_1.default,
             korpa_service_1.KorpaService,
             shared_service_1.SharedService,
             user_service_1.UserService,

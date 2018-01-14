@@ -140,7 +140,7 @@ INSERT INTO `narudzbina` (`id`, `idKorpe`, `idProizvoda`, `kolicina`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodavnica`
+-- Table structure for table `dileri`
 --
 
 CREATE TABLE `prodavnica` (
@@ -153,7 +153,7 @@ CREATE TABLE `prodavnica` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prodavnica`
+-- Dumping data for table `dileri`
 --
 
 INSERT INTO `prodavnica` (`id`, `naziv`, `adresa`, `radnoVreme`, `katObjektaID`, `urlMape`) VALUES
@@ -258,7 +258,7 @@ ALTER TABLE `narudzbina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `prodavnica`
+-- Indexes for table `dileri`
 --
 ALTER TABLE `prodavnica`
   ADD PRIMARY KEY (`id`);
@@ -289,7 +289,7 @@ ALTER TABLE `korpa`
 ALTER TABLE `narudzbina`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 --
--- AUTO_INCREMENT for table `prodavnica`
+-- AUTO_INCREMENT for table `dileri`
 --
 ALTER TABLE `prodavnica`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

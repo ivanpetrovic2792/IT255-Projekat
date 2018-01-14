@@ -6,18 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var ReceptiComponent = (function () {
-    function ReceptiComponent() {
+var ModeliComponent = (function () {
+    function ModeliComponent() {
     }
-    return ReceptiComponent;
+    return ModeliComponent;
 }());
-ReceptiComponent = __decorate([
+ModeliComponent = __decorate([
     core_1.Component({
-        selector: 'recepti',
-        templateUrl: './recepti.html',
-        styleUrls: ['app/css/recepti.css'],
+        selector: 'modeli',
+        templateUrl: './modeli.html',
+        styleUrls: ['app/css/modeli.css'],
     })
-], ReceptiComponent);
+], ModeliComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ReceptiComponent;
-//# sourceMappingURL=recepti.component.js.map
+exports.default = ModeliComponent;
+//# sourceMappingURL=modeli.component.js.map

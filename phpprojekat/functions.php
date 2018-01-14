@@ -232,21 +232,21 @@ function getProizvodi()
 }
 
 
-function getProdavnice()
+function getDileri()
 {
     global $conn;
     $rarray = array();
 
-    $result = $conn->query("SELECT * FROM PRODAVNICA");
+    $result = $conn->query("SELECT * FROM dileri");
     $num_rows = $result->num_rows;
-    $prodavnice = array();
+    $dileri = array();
     if ($num_rows > 0) {
-        $result2 = $conn->query("SELECT * FROM PRODAVNICA");
+        $result2 = $conn->query("SELECT * FROM dileri");
         while ($row = $result2->fetch_assoc()) {
-            array_push($prodavnice, $row);
+            array_push($dileri, $row);
         }
     }
-    $rarray['prodavnice'] = $prodavnice;
+    $rarray['dileri'] = $dileri;
     return json_encode($rarray);
 
 }

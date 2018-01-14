@@ -10,45 +10,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 require("rxjs/Rx");
-var prodavnice_service_1 = require("../../services/prodavnice.service");
+var dileri_service_1 = require("../../services/dileri.service");
 var router_1 = require("@angular/router");
-var ProdavniceComponent = (function () {
-    function ProdavniceComponent(prodavniceService, route) {
+var DileriComponent = (function () {
+    function DileriComponent(dileriService, route) {
         var _this = this;
-        this.prodavniceService = prodavniceService;
+        this.dileriService = dileriService;
         this.route = route;
         var $;
         this.sub = this.route.params.subscribe(function (params) {
             _this.id = +params['id'];
         });
     }
-    ProdavniceComponent.prototype.ngOnInit = function () {
+    DileriComponent.prototype.ngOnInit = function () {
         this.loadProdavnice();
     };
-    ProdavniceComponent.prototype.loadProdavnice = function () {
+    DileriComponent.prototype.loadProdavnice = function () {
         var _this = this;
         var $;
-        this.prodavniceService.getProdavnice().subscribe(function (data) {
-            _this.prodavnice = data;
+        this.dileriService.getProdavnice().subscribe(function (data) {
+            _this.dileri = data;
             setInterval(function () {
                 $ = window['jQuery'];
                 $('table').DataTable();
             }.bind(_this), 400);
         });
     };
-    ProdavniceComponent.prototype.ngOnDestroy = function () {
+    DileriComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    return ProdavniceComponent;
+    return DileriComponent;
 }());
-ProdavniceComponent = __decorate([
+DileriComponent = __decorate([
     core_1.Component({
-        selector: 'prodavnice',
-        templateUrl: './prodavnice.html',
-        styleUrls: ['./prodavnice.css'],
+        selector: 'dileri',
+        templateUrl: './dileri.html',
+        styleUrls: ['./dileri.css'],
     }),
-    __metadata("design:paramtypes", [prodavnice_service_1.default, router_1.ActivatedRoute])
-], ProdavniceComponent);
+    __metadata("design:paramtypes", [dileri_service_1.default, router_1.ActivatedRoute])
+], DileriComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProdavniceComponent;
-//# sourceMappingURL=prodavnice.component.js.map
+exports.default = DileriComponent;
+//# sourceMappingURL=dileri.component.js.map

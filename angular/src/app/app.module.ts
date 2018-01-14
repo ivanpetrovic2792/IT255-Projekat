@@ -16,11 +16,11 @@ import KorpaComponent from "./pages/korpa/korpa.component";
 import AdminPanelComponent from "./pages/adminPanel/adminpanel.component";
 import ONamaComponent from "./pages/onama/onama.component";
 import ProizvodiComponent from "./pages/proizvodi/proizvodi.component";
-import ReceptiComponent from "./pages/recepti/recepti.component";
+import ModeliComponent from "./pages/modeli/modeli.component";
 import KontaktComponent from "./pages/kontakt/kontakt.component";
-import ProdavniceComponent from "./pages/prodavnice/prodavnice.component";
+import DileriComponent from "./pages/dileri/dileri.component";
 import ProductService from "./services/proizvodi.service";
-import ProdavniceService from"./services/prodavnice.service";
+import DileriService from "./services/dileri.service";
 import {KorpaService} from "./services/korpa.service";
 import {SharedService} from "./services/shared.service";
 import {UserService} from "./services/user.service";
@@ -46,16 +46,16 @@ import {AdminService} from "./services/admin.service";
     AdminPanelComponent,
     ONamaComponent,
     ProizvodiComponent,
-    ReceptiComponent,
+    ModeliComponent,
     KontaktComponent,
-    ProdavniceComponent
+    DileriComponent
   ],
 
   providers: [
     RegisterService,
     LoginService,
     ProductService,
-    ProdavniceService,
+    DileriService,
     KorpaService,
     SharedService,
     UserService,

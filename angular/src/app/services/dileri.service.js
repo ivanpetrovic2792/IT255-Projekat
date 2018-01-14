@@ -17,7 +17,7 @@ var constants_1 = require("../constants");
 var ProdavniceService = (function () {
     function ProdavniceService(http) {
         this.http = http;
-        this.url = constants_1.apiUrl + "getProdavnice.php";
+        this.url = constants_1.apiUrl + "getDileri.php";
     }
     ProdavniceService.prototype.getProdavnice = function () {
         return this.http.get(this.url, { headers: constants_1.getAuthHeaders() })
@@ -25,7 +25,7 @@ var ProdavniceService = (function () {
     };
     ProdavniceService.prototype.extractData = function (res) {
         var obj = JSON.parse(res['_body']);
-        return obj.prodavnice;
+        return obj.dileri;
     };
     return ProdavniceService;
 }());
@@ -35,4 +35,4 @@ ProdavniceService = __decorate([
 ], ProdavniceService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ProdavniceService;
-//# sourceMappingURL=prodavnice.service.js.map
+//# sourceMappingURL=dileri.service.js.map

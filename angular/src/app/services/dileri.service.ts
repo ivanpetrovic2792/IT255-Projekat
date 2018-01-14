@@ -5,15 +5,15 @@ import "rxjs/add/operator/do";
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {apiUrl, getAuthHeaders} from "../constants";
-import Prodavnica from "../model/prodavnica";
+import Dileri from "../model/dileri";
 
 @Injectable()
 export default class ProdavniceService {
-    protected url = apiUrl + "getProdavnice.php";
+    protected url = apiUrl + "getDileri.php";
 
     constructor (protected http: Http) {}
 
-    getProdavnice(): Observable<Prodavnica[]> {
+    getProdavnice(): Observable<Dileri[]> {
         return this.http.get(this.url, {headers: getAuthHeaders() })
             .map(this.extractData)
     }
@@ -21,7 +21,7 @@ export default class ProdavniceService {
 
     protected extractData(res: Response) {
         let obj = JSON.parse(res['_body']);
-        return obj.prodavnice;
+        return obj.dileri;
     }
 
 

@@ -6,9 +6,9 @@ import KorpaComponent from "./pages/korpa/korpa.component";
 import AdminPanelComponent from "./pages/adminPanel/adminpanel.component";
 import ONamaComponent from "./pages/onama/onama.component";
 import ProizvodiComponent from "./pages/proizvodi/proizvodi.component";
-import ReceptiComponent from "./pages/recepti/recepti.component";
+import ModeliComponent from "./pages/modeli/modeli.component";
 import KontaktComponent from "./pages/kontakt/kontakt.component";
-import ProdavniceComponent from "./pages/prodavnice/prodavnice.component";
+import DileriComponent from "./pages/dileri/dileri.component";
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,8 +18,8 @@ export const appRoutes: Routes = [
   { path: 'admin', component: AdminPanelComponent },
   { path: 'onama', component: ONamaComponent },
   { path: 'proizvodi/:id', component: ProizvodiComponent },
-  { path: 'recepti', component: ReceptiComponent },
+  { path: 'modeli', component: ModeliComponent },
   { path: 'kontakt', component: KontaktComponent },
-  { path: 'prodavnice/:id', component: ProdavniceComponent },
+  { path: 'dileri/:id', component: DileriComponent },
 
 ];

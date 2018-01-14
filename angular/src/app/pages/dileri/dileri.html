@@ -1,5 +1,5 @@
 
-<script src="../../services/prodavnice.service.ts"></script>
+<script src="../../services/dileri.service.ts"></script>
 
 <section>
 
@@ -40,11 +40,11 @@
             </thead>
 
             <tbody>
-            <tr *ngFor="let prodavnica of prodavnice">
-                <td *ngIf="prodavnica.katObjektaID==id">{{prodavnica.naziv}}</td>
-                <td *ngIf="prodavnica.katObjektaID==id">{{prodavnica.adresa}}</td>
-                <td *ngIf="prodavnica.katObjektaID==id">{{prodavnica.radnoVreme}}</td>
-                <td *ngIf="prodavnica.katObjektaID==id"><p *ngIf="prodavnica.katObjektaID==1">Ovlasceni diler</p><p *ngIf="prodavnica.katObjektaID==2">Ovlasceni servis</p> </td>
+            <tr *ngFor="let dileri of dileri">
+                <td *ngIf="dileri.katObjektaID==id">{{dileri.naziv}}</td>
+                <td *ngIf="dileri.katObjektaID==id">{{dileri.adresa}}</td>
+                <td *ngIf="dileri.katObjektaID==id">{{dileri.radnoVreme}}</td>
+                <td *ngIf="dileri.katObjektaID==id"><p *ngIf="dileri.katObjektaID==1">Ovlasceni diler</p><p *ngIf="dileri.katObjektaID==2">Ovlasceni servis</p> </td>
 
             </tr>
             </tbody>
