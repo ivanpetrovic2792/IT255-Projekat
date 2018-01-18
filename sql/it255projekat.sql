@@ -65,7 +65,8 @@ CREATE TABLE `korisnici` (
 
 INSERT INTO `korisnici` (`id`, `ime`, `prezime`, `adresa`, `email`, `lozinka`, `role_id`, `token`) VALUES
 (6, 'Ivan', 'Petrovic', 'Brdo Banovo', 'brdo@gmail.com', '9cda68744c8d3ca090289f416e5289e2', 1, '70428980f0e63057620d79c370be5ba856cde5d0'),
-(7, 'Mitar', 'Miric', 'Pozeska 94', 'tarmi@gmail.com', '8c97a844248a27645343e70d4981ff8a', 0, 'b30c50a8ac3478673b3bd3167d2aa9855c0b4dfc');
+(7, 'Mitar', 'Miric', 'Pozeska 94', 'tarmi@gmail.com', '8c97a844248a27645343e70d4981ff8a', 0, 'b30c50a8ac3478673b3bd3167d2aa9855c0b4dfc'),
+(3,'Jelena', 'Zivkovic', 'Dorcol', 'jelena@gmail.com', 'c62439ea56c71bf8b4760d507e0e646a', 1, 'da39a3ee5e6b4b0d3255bfef95601890afd80709');
 
 -- --------------------------------------------------------
 

@@ -79,19 +79,19 @@ function register($ime, $prezime, $adresa, $email, $lozinka)
     $rarray = array();
     $errors = "";
     if (checkIfUserExists($email)) {
-        $errors .= "Profile with that email already exists\r\n";
+        $errors .= "Postoji korisnik sa tim mejlom\r\n";
     }
     if (strlen($email) < 5) {
-        $errors .= "Email must have at least 5 characters\r\n";
+        $errors .= "Email mora da sadrzi najmanje 5 karaktera\r\n";
     }
     if (strlen($lozinka) < 5) {
-        $errors .= "Password must have at least 5 characters\r\n";
+        $errors .= "Lozinka mora imati najmanje 5 karaktera\r\n";
     }
     if (strlen($ime) < 3) {
-        $errors .= "First name must have at least 3 characters\r\n";
+        $errors .= "Ime mora imati najmanje 3 karaktera\r\n";
     }
     if (strlen($prezime) < 3) {
-        $errors .= "Last name must have at least 3 characters\r\n";
+        $errors .= "Prezime mora imati najmanje 3 karaktera\r\n";
     }
     if ($errors == "") {
         $stmt = $conn->prepare("INSERT INTO KORISNICI (IME, PREZIME, ADRESA, EMAIL, LOZINKA) VALUES (?, ?, ?, ?,?)");
