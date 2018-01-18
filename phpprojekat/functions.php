@@ -37,7 +37,7 @@ function login($email, $lozinka)
         }
     } else {
         header('HTTP/1.1 401 Unauthorized');
-        $rarray['error'] = "Invalid username/password";
+        $rarray['error'] = "Pogresan email ili lozinka";
     }
     return json_encode($rarray);
 }
