@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2018 at 03:01 AM
+-- Generation Time: Jan 18, 2018 at 04:02 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `it255projekat`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dileri`
+--
+
+CREATE TABLE `dileri` (
+  `id` int(11) NOT NULL,
+  `naziv` varchar(128) NOT NULL,
+  `adresa` varchar(128) NOT NULL,
+  `radnoVreme` varchar(128) NOT NULL,
+  `katObjektaID` int(11) NOT NULL,
+  `urlMape` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dileri`
+--
+
+INSERT INTO `dileri` (`id`, `naziv`, `adresa`, `radnoVreme`, `katObjektaID`, `urlMape`) VALUES
+(1, 'Delta Motors', 'Radnicka 8, Beograd', 'Ponedeljak - Petak 08:30h-19h\r\nSubota 09h-15h', 1, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.171348881987!2d19.22077685119773!3d44.53212400306642!2m3!1f0!2f0!3f0!'),
+(2, 'Delta Motors', 'Radnicka 8, Beograd', 'Ponedeljak - Petak 08:30h-16:30h\r\nSubotom - 09h-14h', 2, ''),
+(3, 'Radulovic', 'Novosadski put 71, Novi Sad', 'Ponedeljak - Petak 08h-17h\r\nSubota - 08h-13h', 1, ''),
+(4, 'Radulovic', 'Novosadski put 71, Novi Sad', 'Ponedeljak - Petak 08h-17h\r\nSubota - 08h-13h', 2, ''),
+(5, 'Mitic Company', 'Dimitrija Tucovica bb, Nis', 'Ponedeljak - Petak 09h-17h\r\nSubota - 09h-14h', 1, ''),
+(6, 'Mitic Company', 'Dimitrija Tucovica bb, Nis', 'Ponedeljak - Petak 09h-17h\r\nSubota - 09h-14h', 2, '');
 
 -- --------------------------------------------------------
 
@@ -64,9 +91,9 @@ CREATE TABLE `korisnici` (
 --
 
 INSERT INTO `korisnici` (`id`, `ime`, `prezime`, `adresa`, `email`, `lozinka`, `role_id`, `token`) VALUES
-(6, 'Ivan', 'Petrovic', 'Brdo Banovo', 'brdo@gmail.com', '9cda68744c8d3ca090289f416e5289e2', 1, '70428980f0e63057620d79c370be5ba856cde5d0'),
-(7, 'Mitar', 'Miric', 'Pozeska 94', 'tarmi@gmail.com', '8c97a844248a27645343e70d4981ff8a', 0, 'b30c50a8ac3478673b3bd3167d2aa9855c0b4dfc'),
-(3,'Jelena', 'Zivkovic', 'Dorcol', 'jelena@gmail.com', 'c62439ea56c71bf8b4760d507e0e646a', 1, 'da39a3ee5e6b4b0d3255bfef95601890afd80709');
+(3, 'Jelena', 'Zivkovic', 'Dorcol', 'jelena@gmail.com', 'c62439ea56c71bf8b4760d507e0e646a', 1, 'f6bdd6bd25c8e5b80289dcacbbb87241519c1c54'),
+(6, 'Ivan', 'Petrovic', 'Brdo Banovo', 'brdo@gmail.com', '9cda68744c8d3ca090289f416e5289e2', 1, '60efa9bddf87fd08d01e7665db96499be6ed9f32'),
+(7, 'Mitar', 'Miric', 'Pozeska 94', 'tarmi@gmail.com', '8c97a844248a27645343e70d4981ff8a', 0, '13b8f033217dddeca85ffbc851ad9c376540d1ed');
 
 -- --------------------------------------------------------
 
@@ -141,33 +168,6 @@ INSERT INTO `narudzbina` (`id`, `idKorpe`, `idProizvoda`, `kolicina`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodavnica`
---
-
-CREATE TABLE `prodavnica` (
-  `id` int(11) NOT NULL,
-  `naziv` varchar(128) NOT NULL,
-  `adresa` varchar(128) NOT NULL,
-  `radnoVreme` varchar(128) NOT NULL,
-  `katObjektaID` int(11) NOT NULL,
-  `urlMape` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `prodavnica`
---
-
-INSERT INTO `prodavnica` (`id`, `naziv`, `adresa`, `radnoVreme`, `katObjektaID`, `urlMape`) VALUES
-(1, 'TSS Novi Sad', 'Strazilovska 31, Novi Sad', 'Ponedeljak - Petak 09h-20h\r\nSubota 09h-14h', 1, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.171348881987!2d19.22077685119773!3d44.53212400306642!2m3!1f0!2f0!3f0!'),
-(2, 'TSS Nis', 'Bulevar Medijana 21, Nis', 'Ponedeljak - Nedelja 10h-22h', 2, ''),
-(3, 'TSS Delta City', 'I Sprat\r\nJurija Gagarina 16, Beograd', 'Ponedeljak - Nedelja 10h-22h', 1, ''),
-(4, 'TSS Stadion', 'II sprat\r\nZaplanjska 32, Beograd', 'Ponedeljak - Nedjelja 10h-22h', 2, ''),
-(5, 'TSS Usce', 'II sprat\r\nBulevar Mihajla Pupina 4, Beograd', 'Ponedeljak - Nedjelja 10h-22h', 1, ''),
-(6, 'TSS Big Fashion', 'Visnjicka 84, Beograd', 'Ponedeljak - Nedjelja 10h-22h', 2, '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `proizvod`
 --
 
@@ -188,25 +188,25 @@ CREATE TABLE `proizvod` (
 INSERT INTO `proizvod` (`id`, `katID`, `ime`, `opis`, `cena`, `url`, `akcija`) VALUES
 (1, 2, 'OZ Zeus', 'Velicina: 20" ili 21", Aluminijum, Dostupno u vise boja', 23500, 'http://www.ozracing.com/cache/images/images/products/wheels/zeus/hand-brushed/01_zeus-hand-brushed-default_233x194.png', 0),
 (2, 2, 'OZ Botticelli III', 'Velicina: 19", 20", 21". Aluminijum. Dostupno u vise boja', 25000, 'http://www.ozracing.com/cache/images/images/products/wheels/botticelli-iii/matt-black/01_botticelli-iii-matt-black-default_233x194.png', 10),
-(3, 2, 'OZ Ego', 'Velicina: 16", 17", 18". Aluminijum i silicijum. Dostupno u crnoj boji', 20000, 'http://www.ozracing.com/cache/images/images/products/wheels/ego/matt-black-diamond-cut/01_ego-matt-black-diamond-cut-default_233x194.png', 10),
+(3, 2, 'OZ Ego', 'Velicina: 16", 17", 18". Aluminijum i silicijum. Dostupno u crnoj boji', 20000, 'http://www.ozracing.com/cache/images/images/products/wheels/ego/matt-black-diamond-cut/01_ego-matt-black-diamond-cut-default_233x194.png', 0),
 (4, 2, 'BBS RX-R', 'Velicine: 19" i 20". Aluminijum. Dostupno u vise boja', 18000, 'https://bbs.com/images/produkte/performance_line/rx_gold_matt_produktteaser_vorschau.png', 10),
 (5, 2, 'Summit Racing RLW', 'Velicina: 13", 14", 15". Celik. Dostupno u crnoj boji.', 2500, 'https://static.summitracing.com/global/images/prod/mediumlarge/rlw-rt8150012_ml.jpg', 10),
-(6, 1, 'Michelin PRIMACY 4', 'Dugotrajne performanse Optimalan gazeci sloj. Zahvaljujuci novom dizajnu sare radi ve?e bezbednosti, MICHELIN Primacy 4 zadrzava visok nivo izbacivanja vode cak i kada je istrošen.\r\nNjegov novi gazeci sloj omogucava +22% prostora za izbacivanje vode.', 22221, 'http://www.michelin.rs/content/img/tyres/2.1/primacy-4/150x200_desktop_primacy_4.png', 0),
+(6, 1, 'Michelin PRIMACY 4', '205/55 R16', 22221, 'https://www.internet-prodaja-guma.com/cdn/michelin-primacy-hp.jpg', 10),
 (7, 1, 'LASSA SNOWAYS 2+', '165/70 R14 81T', 4130, 'https://www.kemoimpex.com/upload/tires/24227.jpg', 10),
 (8, 1, 'STARFIRE WT200', '185/65 R15 88T', 4023, 'https://www.kemoimpex.com/upload/tires/26955.jpg', 10),
 (9, 1, 'PIRELLI CINTURATO P7', '225/45 R17 91W', 11002, 'https://www.kemoimpex.com/upload/tires/31512.jpg', 10),
 (10, 1, 'PIRELLI SOTTOZERO 3', '315/30 R21 105V', 93086, 'https://www.kemoimpex.com/upload/tires/41064.jpg', 10),
 (11, 3, 'Sony GS Series MEXGS810BH', 'Bluetooth audio streaming sa jednostavnim sigurnim uparivanjem, prigodnim za slušanjem sa jednim dodirom pomo?u NFC tehnologije, daljinskim upravlja?em sa glasovnom kontrolom za odabrane pametne telefone, integrisani HD radio tjuner10 sa RDS i iTunes ozna?avanjem.', 10250, 'https://images-na.ssl-images-amazon.com/images/I/81vyls1cPnL._SL1500_.jpg', 10),
-(12, 3, 'Pioneer AVH-X2800BS', 'Omogucava pustanje DVD i CD. \r\nUgra?eni Bluetooth za handsfree poziv i audio streaming; podržava dva telefona odjednom.\r\nUgra?eni iPod, iPhone i iPad kontrolni opcioni adapter potreban za gledanje video sadržaja.', 23000, 'https://images-na.ssl-images-amazon.com/images/I/51w6E5RDB9L.jpg', 0),
-(13, 3, 'Bluetooth Car Audio Stereo Receiver - LESHP', 'Pogodno za nova vozila, zahteva manje prostora za ugradnju.\r\nNema CD ili DVD plejer, pu[ta sa USB / SD, MP3, VMA, FM i pametne telefone.\r\nOvaj automobil stereo plejer ima ugra?eni Bluetooth i mikrofon za handsfree pozivanje.\r\nFM radio, 18 radio stanica može se ?uvati', 2450, 'https://images-na.ssl-images-amazon.com/images/I/61bRXE8ZqiL._SL1500_.jpg', 10),
-(14, 3, 'Alpine CDE-W265BT', 'CD / MP3 prijemnik sa podrškom za Bluetooth i iPhone / iPod\r\nCD prijemnik sa AM / FM tjunerom\r\nUgra?eno MOSFET poja?alo (18 vati RMS CEA-2006/50 maksimalno k 4 kanala)\r\nReprodukuje CD-ove, uklju?uju?i diskove sa MP3 i VMA datotekama\r\n2-linijski displej sa promenljivom bojom osvetljenja', 28900, 'https://images-na.ssl-images-amazon.com/images/I/51qegSOi35L.jpg', 10),
-(15, 3, 'Pioneer DEH-X7800BHS', 'Ugra?eni Bluetooth za handsfree pozivanje i beži?ni audio streaming\r\nUgra?eni HD radio\r\nSpotifi, radi sa Pandora, SiriusKSM-Readi\r\nPioneer ARC App kompatibilan\r\nFLAC audio reprodukcija', 21000, 'https://images-na.ssl-images-amazon.com/images/I/61PWA--VYbL._SL1000_.jpg', 10),
-(16, 4, 'G-TEXNIK 001', '7", Podrska za FM Radio, 800 * 480 rezolucija, 8GB interne memorije.', 7800, 'https://images-na.ssl-images-amazon.com/images/I/61MvFhZCT8L._SL1000_.jpg', 0),
+(12, 3, 'Sony CDX-GT710', 'Omogucava pustanje DVD i CD. \r\nUgradjeni Bluetooth za handsfree poziv i audio streaming; podržava dva telefona odjednom.\r\nUgradjeni iPod, iPhone i iPad kontrolni opcioni adapter potreban za gledanje video sadržaja.', 23000, 'https://images-na.ssl-images-amazon.com/images/I/81MVc8DYbSL._SL1500_.jpg', 0),
+(13, 3, 'SONY LESHP', 'Pogodno za nova vozila, zahteva manje prostora za ugradnju.\r\nNema CD ili DVD plejer, pu[ta sa USB / SD, MP3, VMA, FM i pametne telefone.\r\nOvaj automobil stereo plejer ima ugra?eni Bluetooth i mikrofon za handsfree pozivanje.\r\nFM radio, 18 radio stanica može se ?uvati', 2450, 'https://images-na.ssl-images-amazon.com/images/I/81eBXOKPYoL._SL1500_.jpg', 0),
+(14, 3, 'Sony DSXS300BTX', 'CD / MP3 prijemnik sa podrškom za Bluetooth i iPhone / iPod\r\nCD prijemnik sa AM / FM tjunerom\r\nUgra?eno MOSFET poja?alo (18 vati RMS CEA-2006/50 maksimalno k 4 kanala)\r\nReprodukuje CD-ove, uklju?uju?i diskove sa MP3 i VMA datotekama\r\n2-linijski displej sa promenljivom bojom osvetljenja', 28900, 'https://images-na.ssl-images-amazon.com/images/I/81o7rifoFEL._SL1500_.jpg', 0),
+(15, 3, 'Sony MEX-N5100BT', 'Ugra?eni Bluetooth za handsfree pozivanje i beži?ni audio streaming\r\nUgra?eni HD radio\r\nSpotifi, radi sa Pandora, SiriusKSM-Readi\r\nPioneer ARC App kompatibilan\r\nFLAC audio reprodukcija', 21000, 'https://images-na.ssl-images-amazon.com/images/I/81YoXxRYIsL._SL1500_.jpg', 10),
+(16, 4, 'G-TEXNIK 001', '7", Podrska za FM Radio, 800 * 480 rezolucija, 8GB interne memorije.', 7800, 'https://images-na.ssl-images-amazon.com/images/I/61MvFhZCT8L._SL1000_.jpg', 10),
 (17, 4, 'PRESTIGIO GeoVision 5058', 'Dijagonala ekrana: 5.0"\r\nRezolucija ekrana: 480 x 272', 9500, 'https://www.gigatron.rs/img/products/large/image565c1df9442c3.png', 10),
 (18, 4, 'GARMIN Drive 50 LM', 'Dijagonala ekrana: 5.0"\r\nRezolucija ekrana: 480 x 272\r\n', 27000, 'https://www.gigatron.rs/img/products/large/image5a2fdda05975c.png', 10),
 (19, 4, 'GARMIN DriveLuxe 50 LMT', 'Dijagonala ekrana: 5.1"\r\nRezolucija ekrana: 800 x 480\r\nBluetooth: Da', 58000, 'https://www.gigatron.rs/img/products/large/image580ddfced4e96.png', 10),
 (20, 4, 'Pioneer AVIC-F860BT', 'Dijagonala ekrana: 6.1"\r\n', 92000, 'https://www.gigatron.rs/img/products/large/image54ec4a4212769.jpg', 10),
-(21, 5, 'Power-Max Eco PM1350', 'Polaritet: Levi +\r\nKapacitet: 135 Ah\r\nStartna snaga: 800 A(EN)', 14820, 'http://www.akumulator-shop.rs/images/stories/virtuemart/product/pe1350-jo.jpg', 0),
+(21, 5, 'Power-Max Eco PM1350', 'Polaritet: Levi +\r\nKapacitet: 135 Ah\r\nStartna snaga: 800 A(EN)', 14820, 'http://www.akumulator-shop.rs/images/stories/virtuemart/product/pe1350-jo.jpg', 10),
 (22, 5, 'Varta Silver Dynamic', 'Polaritet: Desni\r\nKapacitet: 63Ah\r\nStartna snaga: 610 A(EN)', 11340, 'http://www.akumulator-shop.rs/images/stories/virtuemart/product/resized/magictoolbox_cache/edae1e15551de3322abb8a2a6d8950db/4/5/456/original/7e304cddd70f272a2c8bd12f2d6f82a4.jpg', 10),
 (23, 5, 'Varta Blue Dynamic', 'Polaritet: Desni +\r\nKapacitet: 95 Ah\r\nStartna snaga: 800 A(EN)', 15588, 'http://www.akumulator-shop.rs/images/stories/virtuemart/product/resized/magictoolbox_cache/edae1e15551de3322abb8a2a6d8950db/4/6/462/original/5515ae1170bd1bbaac8e964549d0ba6a.jpg', 10),
 (24, 5, 'Exide Start-Stop AGM EK600', 'Polaritet: Desni +\r\nKapacitet: 60 Ah\r\nStartna snaga: 680 A(EN)', 14686, 'http://www.akumulator-shop.rs/images/stories/virtuemart/product/ek600.jpg', 10),
@@ -236,6 +236,12 @@ INSERT INTO `role` (`id`, `name`) VALUES
 --
 
 --
+-- Indexes for table `dileri`
+--
+ALTER TABLE `dileri`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `korisnici`
 --
 ALTER TABLE `korisnici`
@@ -254,12 +260,6 @@ ALTER TABLE `narudzbina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `prodavnica`
---
-ALTER TABLE `prodavnica`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `proizvod`
 --
 ALTER TABLE `proizvod`
@@ -269,6 +269,11 @@ ALTER TABLE `proizvod`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `dileri`
+--
+ALTER TABLE `dileri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `korisnici`
 --
@@ -284,11 +289,6 @@ ALTER TABLE `korpa`
 --
 ALTER TABLE `narudzbina`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
---
--- AUTO_INCREMENT for table `prodavnica`
---
-ALTER TABLE `prodavnica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `proizvod`
 --

@@ -169,6 +169,22 @@ function addProizvod($katID, $ime, $opis, $cena, $url, $akcija)
     $errors = "";
     if (checkIfLoggedIn()) {
 
+        if (strlen($ime) < 5) {
+            $errors .= "Ime mora imati najmanje pet karaktera\r\n";
+        }
+
+        if (strlen($opis) < 10) {
+            $errors .= "Opis mora sadrzati najmanje 10 karaktera\r\n";
+        }
+
+        if (strlen((string)$cena) == 0) {
+            $errors .= "Morate uneti cenu proizvoda!\r\n";
+        }
+
+        if (strlen($url) == 0) {
+            $errors .= "Morate uneti link slike proizvoda!\r\n";
+        }
+
         if ($errors == "") {
             $stmt = $conn->prepare("INSERT INTO proizvod (katID, ime, opis, cena, url, akcija ) 
         VALUES (?, ?, ?, ?, ?, ?)");
